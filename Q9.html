@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Form</title>
+<script>
+function validate() {
+  let name = document.forms["form"]["name"].value;
+  let email = document.forms["form"]["email"].value;
+  let password = document.forms["form"]["password"].value;
+  let mobile = document.forms["form"]["mobile"].value;
+
+  if (name == "") {
+    alert("Name required");
+    return false;
+  }
+
+  if (!email.includes("@")) {
+    alert("Invalid email");
+    return false;
+  }
+
+  if (password.length < 8) {
+    alert("Password must be 8 characters");
+    return false;
+  }
+
+  if (mobile.length != 10) {
+    alert("Invalid mobile");
+    return false;
+  }
+}
+</script>
+</head>
+<body>
+
+<form name="form" onsubmit="return validate()">
+Name: <input type="text" name="name"><br>
+Email: <input type="text" name="email"><br>
+Password: <input type="password" name="password"><br>
+Mobile: <input type="text" name="mobile"><br>
+<input type="submit">
+</form>
+
+</body>
+</html>
